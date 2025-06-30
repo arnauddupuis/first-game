@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://phbieehuxgtn"]
+
+[ext_resource type="Script" uid="uid://d3m4xxh7etvbl" path="res://scripts/volume_slider.gd" id="1_ynsfn"]
+
+[node name="VolumeSlider" type="HSlider"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.05
+script = ExtResource("1_ynsfn")
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

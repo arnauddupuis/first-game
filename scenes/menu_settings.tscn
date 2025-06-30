@@ -1,0 +1,135 @@
+[gd_scene load_steps=6 format=3 uid="uid://cixg3jsy8cp2g"]
+
+[ext_resource type="FontFile" uid="uid://dcs5blrcur66r" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_t4ura"]
+[ext_resource type="Script" uid="uid://7k54dfn3at4k" path="res://scripts/menu_settings.gd" id="1_uixsi"]
+[ext_resource type="FontFile" uid="uid://c6vjbobj4r01s" path="res://assets/fonts/PixelOperator8.ttf" id="2_w1syq"]
+[ext_resource type="PackedScene" uid="uid://phbieehuxgtn" path="res://scenes/volume_slider.tscn" id="3_1tco0"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_uixsi"]
+file = "res://assets/video/intro_scene.ogv"
+
+[node name="MenuSettings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uixsi")
+
+[node name="IntroBackground" type="VideoStreamPlayer" parent="."]
+modulate = Color(0.473976, 0.473976, 0.473976, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = SubResource("VideoStreamTheora_uixsi")
+autoplay = true
+loop = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 167.0
+offset_right = 945.0
+offset_bottom = 491.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_top = 37.0
+offset_right = 240.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_t4ura")
+theme_override_font_sizes/font_size = 64
+text = "Settings"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -124.0
+offset_right = 340.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_w1syq")
+theme_override_font_sizes/font_size = 32
+text = "Music  "
+
+[node name="MusicVolumeSlider" parent="VBoxContainer" instance=ExtResource("3_1tco0")]
+layout_mode = 2
+audio_bus_name = "Music"
+
+[node name="MusicCheckButton" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_w1syq")
+theme_override_font_sizes/font_size = 16
+text = "Mute"
+
+[node name="SFXLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_w1syq")
+theme_override_font_sizes/font_size = 32
+text = "SFX     "
+
+[node name="SFXVolumeSlider" parent="VBoxContainer" instance=ExtResource("3_1tco0")]
+layout_mode = 2
+audio_bus_name = "SFX"
+
+[node name="SFXCheckButton" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_w1syq")
+theme_override_font_sizes/font_size = 16
+text = "Mute
+"
+
+[node name="MasterLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_w1syq")
+theme_override_font_sizes/font_size = 32
+text = "Master"
+
+[node name="MasterVolumeSlider" parent="VBoxContainer" instance=ExtResource("3_1tco0")]
+layout_mode = 2
+
+[node name="MasterCheckButton" type="CheckButton" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_w1syq")
+theme_override_font_sizes/font_size = 16
+text = "Mute"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -116.0
+offset_top = -112.0
+offset_right = 116.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_w1syq")
+theme_override_font_sizes/font_size = 64
+text = "Back"
+
+[connection signal="toggled" from="VBoxContainer/MusicCheckButton" to="." method="_on_music_check_button_toggled"]
+[connection signal="toggled" from="VBoxContainer/SFXCheckButton" to="." method="_on_sfx_check_button_toggled"]
+[connection signal="toggled" from="VBoxContainer/MasterCheckButton" to="." method="_on_master_check_button_toggled"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

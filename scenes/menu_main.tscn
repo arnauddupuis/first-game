@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=3 uid="uid://buktvkdqmt7cx"]
+
+[ext_resource type="FontFile" uid="uid://c6vjbobj4r01s" path="res://assets/fonts/PixelOperator8.ttf" id="1_dk4ej"]
+[ext_resource type="Script" uid="uid://nv74jwcfq6m0" path="res://scripts/menu_main.gd" id="1_ivjyr"]
+[ext_resource type="FontFile" uid="uid://dcs5blrcur66r" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_5ucki"]
+[ext_resource type="Texture2D" uid="uid://dk1srk315wjfb" path="res://assets/images/background.png" id="2_hl1yy"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_ivjyr"]
+file = "res://assets/video/intro_scene.ogv"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ivjyr"]
+texture = ExtResource("2_hl1yy")
+
+[node name="MenuMain" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ivjyr")
+
+[node name="IntroBackground" type="VideoStreamPlayer" parent="."]
+modulate = Color(0.473976, 0.473976, 0.473976, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = SubResource("VideoStreamTheora_ivjyr")
+autoplay = true
+loop = true
+
+[node name="BackgroundImage" type="Panel" parent="."]
+visible = false
+modulate = Color(0.340339, 0.340339, 0.340339, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ivjyr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -283.5
+offset_top = -378.0
+offset_right = 283.5
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_dk4ej")
+theme_override_font_sizes/font_size = 32
+text = "
+Play
+
+"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_dk4ej")
+theme_override_font_sizes/font_size = 32
+text = "
+Settings
+
+"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_dk4ej")
+theme_override_font_sizes/font_size = 32
+text = "
+Quit
+
+"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -370.0
+offset_top = 80.0
+offset_right = 370.0
+offset_bottom = 160.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_5ucki")
+theme_override_font_sizes/font_size = 80
+text = "First Game"
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbsv7llyjydbc"]
+
+[ext_resource type="Script" uid="uid://v258jg2p2sje" path="res://scripts/change_level_zone.gd" id="1_rvrw8"]
+
+[sub_resource type="Curve" id="Curve_rvrw8"]
+_data = [Vector2(0.0538462, 1), 0.0, 0.0, 0, 0, Vector2(0.961539, 0.474046), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="ChangeLevelZone" type="Area2D"]
+script = ExtResource("1_rvrw8")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 100
+lifetime = 0.6
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+scale_amount_curve = SubResource("Curve_rvrw8")
+color = Color(0.556863, 1, 1, 0.486275)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
