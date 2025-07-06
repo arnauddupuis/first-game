@@ -1,7 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://mehxhuibq17v"]
+[gd_scene load_steps=28 format=3 uid="uid://mehxhuibq17v"]
 
 [ext_resource type="PackedScene" uid="uid://bii2b3hraq6p5" path="res://scenes/game_core_manager.tscn" id="1_n0mmc"]
-[ext_resource type="Script" uid="uid://dkvrueh0ffscb" path="res://scripts/game_level_1.gd" id="1_urr13"]
+[ext_resource type="Script" uid="uid://di0it6ff6rlsf" path="res://scripts/game_level_1.gd" id="1_urr13"]
 [ext_resource type="FontFile" uid="uid://dcs5blrcur66r" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_urr13"]
 [ext_resource type="Texture2D" uid="uid://cao8gj6fgmul8" path="res://assets/sprites/world_tileset.png" id="4_bqj8b"]
 [ext_resource type="PackedScene" uid="uid://cvss314alxf0c" path="res://scenes/player.tscn" id="5_0c62g"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://3f3u3afhdk83" path="res://scenes/platform.tscn" id="10_u2ip1"]
 [ext_resource type="PackedScene" uid="uid://ctca8da7sm13r" path="res://scenes/slime.tscn" id="11_755ic"]
 [ext_resource type="FontFile" uid="uid://c6vjbobj4r01s" path="res://assets/fonts/PixelOperator8.ttf" id="12_urll6"]
+[ext_resource type="PackedScene" uid="uid://b423fmiruxv4l" path="res://scenes/power_up_jump.tscn" id="13_urr13"]
+[ext_resource type="PackedScene" uid="uid://dalb7eouci4rn" path="res://scenes/power_up_super_jump.tscn" id="14_iijle"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dinhu"]
 texture = ExtResource("4_bqj8b")
@@ -518,3 +520,9 @@ theme_override_font_sizes/font_size = 8
 text = "Your score is X"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="PowerUpJump" parent="." instance=ExtResource("13_urr13")]
+position = Vector2(233, -59)
+
+[node name="PowerUpSuperJump" parent="." instance=ExtResource("14_iijle")]
+position = Vector2(-296, -92)

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b423fmiruxv4l"]
+
+[ext_resource type="Script" uid="uid://u3q6uxvdr2ld" path="res://scripts/power_up_jump.gd" id="1_q1db8"]
+[ext_resource type="Texture2D" uid="uid://ccknvmw2ov6fq" path="res://assets/sprites/fruit.png" id="2_cwtw0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sbsah"]
+radius = 7.0
+
+[node name="PowerUpJump" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_q1db8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cwtw0")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sbsah")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

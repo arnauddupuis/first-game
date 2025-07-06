@@ -6,7 +6,8 @@ signal score_value_changed(score:int)
 
 ## Here we define our variables
 var score = 0
-
+var jump_velocity_modifier := 1.0
+var speed_modifier := 1.0
 
 # This function adds points to the score and emit the score_value_changed
 # signal when it's done.

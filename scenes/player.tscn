@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://cvss314alxf0c"]
 
 [ext_resource type="Texture2D" uid="uid://b72c6vfjwaq62" path="res://assets/sprites/knight.png" id="1_7xtk0"]
-[ext_resource type="Script" uid="uid://758g4n16wjo8" path="res://scripts/player.gd" id="1_rlkdw"]
+[ext_resource type="Script" uid="uid://64uanibry5k8" path="res://scripts/player.gd" id="1_rlkdw"]
 [ext_resource type="FontFile" uid="uid://c6vjbobj4r01s" path="res://assets/fonts/PixelOperator8.ttf" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjlus"]

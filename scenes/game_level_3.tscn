@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://bshd5ywnfjeve"]
+[gd_scene load_steps=15 format=3 uid="uid://bshd5ywnfjeve"]
 
-[ext_resource type="Script" uid="uid://h6oossre8va0" path="res://scripts/game_level_3.gd" id="1_4gr3i"]
+[ext_resource type="Script" uid="uid://53lolmid1n5w" path="res://scripts/game_level_3.gd" id="1_4gr3i"]
 [ext_resource type="Texture2D" uid="uid://cao8gj6fgmul8" path="res://assets/sprites/world_tileset.png" id="1_q8l1s"]
 [ext_resource type="PackedScene" uid="uid://bii2b3hraq6p5" path="res://scenes/game_core_manager.tscn" id="2_4gr3i"]
 [ext_resource type="PackedScene" uid="uid://cvss314alxf0c" path="res://scenes/player.tscn" id="2_4qhr4"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bq40tbyetv50f" path="res://scenes/menu_pause.tscn" id="5_4qhr4"]
 [ext_resource type="FontFile" uid="uid://c6vjbobj4r01s" path="res://assets/fonts/PixelOperator8.ttf" id="7_utjdn"]
 [ext_resource type="PackedScene" uid="uid://bbsv7llyjydbc" path="res://scenes/change_level_zone.tscn" id="8_utjdn"]
+[ext_resource type="PackedScene" uid="uid://dalb7eouci4rn" path="res://scenes/power_up_super_jump.tscn" id="10_gnc22"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4gr3i"]
 texture = ExtResource("1_q8l1s")
@@ -245,3 +246,6 @@ shape = SubResource("CircleShape2D_4gr3i")
 [node name="Slime4" parent="." instance=ExtResource("3_7ltui")]
 position = Vector2(56, -47)
 direction = -1
+
+[node name="PowerUpSuperJump" parent="." instance=ExtResource("10_gnc22")]
+position = Vector2(-8, -58)
