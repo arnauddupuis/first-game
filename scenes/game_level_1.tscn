@@ -521,6 +521,28 @@ text = "Your score is X"
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="Label6" type="Label" parent="Labels"]
+offset_left = -369.0
+offset_top = -132.0
+offset_right = -211.0
+offset_bottom = -113.0
+theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
+theme_override_fonts/font = ExtResource("12_urll6")
+theme_override_font_sizes/font_size = 8
+text = "Sometime you need a big 
+boost to your jump power"
+
+[node name="Label7" type="Label" parent="Labels"]
+offset_left = 105.0
+offset_top = -94.0
+offset_right = 271.0
+offset_bottom = -75.0
+theme_override_colors/font_color = Color(0.0980392, 0.313726, 0.752941, 1)
+theme_override_fonts/font = ExtResource("12_urll6")
+theme_override_font_sizes/font_size = 8
+text = "Sometime you need a small 
+boost to your jump power"
+
 [node name="PowerUpJump" parent="." instance=ExtResource("13_urr13")]
 position = Vector2(233, -59)
 
